@@ -1,0 +1,45 @@
+/* Basic Tailwind setup */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px; /* Fixed width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #002A0C;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for scrollbar */
+::-webkit-scrollbar-thumb:hover {
+  background: #004414;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add shadow effect for a more noticeable hover */
+  cursor: pointer;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.node {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.edge {
+  transition: opacity 0.5s ease-in-out;
+}
+* {
+  transition: all;
+}
