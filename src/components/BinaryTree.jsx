@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import NoUpload from '../utils/NoUpload'
 class Node{
   constructor() {
     this.x = x;
@@ -31,7 +32,7 @@ const BinaryTree = () => {
 
 
   return (
-    <div>gaved Up</div>
+    <NoUpload/>
   )
 }
 
