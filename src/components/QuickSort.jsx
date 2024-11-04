@@ -63,21 +63,8 @@ const QuickSort = () => {
   
 
   return (
-    <div className="w-[100%] h-[100%] p-20 bg-green-600 flex justify-end flex-col">
-      <div className="flex flex-row gap-4 justify-center pb-4">
-        <div onClick={randomize}>
-          <Button name={"RANDOMIZE"} />
-        </div>
-
-        <div onClick={sortBut}>
-          <Button name={"SORT"} />
-        </div>
-        {/* <div onClick={autoBtn}>
-          <Button name={auto ? "Auto" : "STOP"} />
-        </div> */}
-        {/* {auto?<div>Stop</div>:""} */}
-      </div>
-      <div className=" shadow-xl shadow-[#000000] border-4 overflow-hidden rounded-3xl border-green-950 h-[100%] w-[100%] flex flex-col justify-end items-end bg-green-400 ">
+    <div className="w-[100%] h-[100%] p-10 bg-green-600 flex justify-center flex-col">
+      <div className=" shadow-xl shadow-[#000000] border-4 overflow-hidden rounded-3xl border-green-950 md:sm:h-[80%] h-[80vh] w-[100%] flex flex-col justify-center items-center bg-green-400 ">
         <div className="h-[80vh] w-full flex flex-row justify-evenly items-end  relative">
           {ran.map((value, index) => (
             <div
@@ -90,6 +77,19 @@ const QuickSort = () => {
             ></div>
           ))}
         </div>
+      </div>
+      <div className="flex flex-row gap-4 justify-center  pb-20 pt-10">
+        <div onClick={randomize}>
+          <Button name={"RANDOMIZE"} />
+        </div>
+
+        <div onClick={sortBut}>
+          <Button name={"SORT"} />
+        </div>
+        {/* <div onClick={autoBtn}>
+          <Button name={auto ? "Auto" : "STOP"} />
+        </div> */}
+        {/* {auto?<div>Stop</div>:""} */}
       </div>
     </div>
   );

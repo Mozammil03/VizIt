@@ -26,7 +26,7 @@ const topics = [
   {
     path: "/QuickSort",
     element: <QuickSort />,
-    topicName: "QuickSort",
+    topicName: "Quick Sort",
     visible: true,
   },
   {
@@ -73,7 +73,7 @@ export const Navigation = () => {
   return (
     <div className="font-semibold h-[100%] overflow-y-auto overflow-x-hidden bg-green-800">
       <Link onClick={handleClick} to={"/"}>
-        <div className="bg-green-950 text-white p-4 h-16  font-bold text-3xl w-[100%] ">
+        <div className="bg-green-950 text-white p-2 h-16  font-bold md:sm:text-3xl text-xl md:sm:p-4 w-[100%] ">
           Topics
         </div>
       </Link>

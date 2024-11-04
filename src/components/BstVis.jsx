@@ -142,7 +142,7 @@ const BstVis = () => {
     }
   };
   useEffect(()=> {
-    generateRandomly(10);
+    generateRandomly(4);
   }, []);
 
   const logNodePositions = (node, depth = 0) => {
@@ -231,12 +231,12 @@ const BstVis = () => {
 
   return (
     <div className="h-auto w-[100%] relative flex flex-col ">
-      <div className="flex flex-row w-[100%] relative transparent">
-        <div className="w-[100%] h-[100vh]">
+      <div className="flex flex-col w-[100%] relative transparent md:sm:flex-row">
+        <div className="w-[100%] h-[80vh] md:sm:h-[100vh]">
           {nodes.map((node) => node)}
-          {edges.map((edge) => edge)}
+          <div className="hidden md:sm:flex">{edges.map((edge) => edge)}</div>
         </div>
-        <div className="w-[20%] h-[100vh] p-8 shadow-2xl shadow-[#000000] bg-green-900 flex flex-col gap-5 justify-center items-center">
+        <div className="w-[100%] md:sm:w-[20%] h-fit md:sm:h-[100vh] p-8 shadow-2xl shadow-[#000000] bg-green-900 flex flex-row md:sm:flex-col gap-5 justify-center items-center">
           <div className="">
             <form className=" flex flex-col gap-2" onSubmit={handleInsert}>
               <label>
@@ -254,7 +254,7 @@ const BstVis = () => {
               </button>
             </form>
           </div>
-          <div className="flex flex-col gap-2 justify-center items-center">
+          <div className="flex-col gap-2 md:sm:flex hidden justify-center items-center">
             <input
               className="w-16 rounded-xl"
               type="text"
@@ -272,7 +272,7 @@ const BstVis = () => {
               onChange={handleDelKeyChange}
               value={delKey}
             />
-            <div onClick={() => deleteNode(parseInt(delKey))}>
+            <div onClick={() => (delKey ? deleteNode(parseInt(delKey)) : "")}>
               <Button name={"Delete"} />
             </div>
           </div>
