@@ -11,7 +11,7 @@ export const NewNode = ({node}) => {
           opacity: 1,
           animation: "fade-in 0.5s forwards",
         }}
-        className={`node p-1 h-10  text-white w-10 bg-green-950 font-bold rounded-full scale-125 flex items-center justify-center`}
+        className={`p-1 h-10  text-white w-10 bg-green-950 font-bold rounded-full scale-125 flex items-center justify-center`}
         key={node.key}
       >
         {node.key}

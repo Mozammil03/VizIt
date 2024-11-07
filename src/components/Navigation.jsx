@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { setCurrentTopic } from "../store/topicSlice";
 import QuickSort from './QuickSort';
 import NoUpload from '../utils/NoUpload';
+import AVLtree from './AVLtree';
 
 
 
@@ -30,15 +31,15 @@ const topics = [
     visible: true,
   },
   {
-    path: "/binaryTree",
-    element: <BinaryTree/>,
-    topicName: "Binary Tree",
+    path: "/AVLTree",
+    element: <AVLtree/>,
+    topicName: "AVL Tree",
     visible: true,
   },
   {
-    path: "/AVLTree",
-    element: <NoUpload/>,
-    topicName: "AVL Tree",
+    path: "/binaryTree",
+    element: <BinaryTree/>,
+    topicName: "Binary Tree",
     visible: true,
   },
 ];
