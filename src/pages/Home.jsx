@@ -24,14 +24,11 @@ const Home = () => {
           isLoaded ? "animate-slideUp" : "opacity-0"
         }`}
       >
-        <h1 className="text-5xl md:text-7xl font-bold text-white tracking-wide mb-4">
-          Welcome to Our Platform
-        </h1>
         <p className="text-lg md:text-xl text-gray-200 mb-8">
           Explore different topics to Learn visually while experimenting;
         </p>
         <Link to={'/bst'}>
-          <button className="px-6 py-3 text-lg font-semibold rounded-lg bg-green-500 text-white hover:bg-green-700 transition-colors">
+          <button className="px-6 py-3 text-lg font-semibold rounded-xl bg-green-700 text-white hover:bg-green-800 transition-colors">
             Get Started with BST
           </button>
         </Link>

@@ -154,13 +154,15 @@ const BstVis = () => {
         ...prevEdges,
         <div
           style={{
-            width: `${5 + depth}rem`,
+            width: `${node != root ? 5 + depth : 8 + depth}rem`,
             position: "absolute",
-            left: `${(node.x + node.left.x) / 2 + 50 - 1}%`,
+            left: `${
+              (node.x + node.left.x) / 2 + 50 - (node != root ? 1 : 4)
+            }%`,
             top: `${(node.y + node.left.y) / 2 + 50 + 15}px`,
             transform: `rotate(${
               Math.atan2(node.left.y - node.y, node.left.x - node.x) +
-              0.8 +
+              (node != root ? 0.8 : 1) +
               depth
             }rad)`,
             opacity: 1,
@@ -171,19 +173,26 @@ const BstVis = () => {
         ></div>,
       ]);
     }
+    // if (node == root) {
+    //   setEdges((prevEdges) => [
+    //     ...prevEdges,
+
+        
+    //   ])
+    // }
 
     if (node.right) {
       setEdges((prevEdges) => [
         ...prevEdges,
         <div
           style={{
-            width: `${5 + depth}rem`,
+            width: `${node!=root?(5 + depth):(8+depth)}rem`,
             position: "absolute",
-            left: `${(node.x + node.right.x) / 2 + 50 - 1}%`,
+            left: `${(node.x + node.right.x) / 2 + 50 - (node!=root?1:4)}%`,
             top: `${(node.y + node.right.y) / 2 + 50 + 15}px`,
             transform: `rotate(${
               Math.atan2(node.right.y - node.y, node.right.x - node.x) -
-              0.55 -
+              (node!=root?0.85:1) -
               depth
             }rad)`,
             opacity: 1,

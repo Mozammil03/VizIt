@@ -199,18 +199,25 @@ const AVLTree = () => {
     setRoot(null);
     setVal("");
   };
+  
+  const [del, setDel] = useState(0);
+
+  const deleteKey = () => {
+    // deleteNode(del);
+  }
+  const handleDelete = (e) => {
+    setDel(() => e.target.value);
+  }
+
 
   return (
     <div className="w-[100%] h-[100%] mb-10 flex bg-green-600 md:sm:flex-row flex-col scale-100  md:sm:scale-100 gap-2 md:sm:gap-0">
-      
       <div className="w-[100%] md:sm:w-[80%] scale-75 pr-20 h-screen p-4 pl-20 md:sm:pl-0 flex justify-center bg-green-600 relative">
         {edges}
         {nodes}
       </div>
 
-     
       <div className="w-[100%] md:sm:scale-100 scale-150 h-screen md:sm:w-1/5 md:sm:flex-col p-8 md:sm:shadow-2xl shadow-[#000000] shadow-none md:sm:bg-green-900 flex flex-row gap-5 justify-center items-center">
-        
         <form className="flex flex-col gap-2" onSubmit={handleInsert}>
           <input
             className="w-16 rounded-xl"
@@ -221,7 +228,6 @@ const AVLTree = () => {
           <Button name="Insert" />
         </form>
 
-      
         <div className="flex flex-col gap-2 justify-center items-center">
           <input
             className="w-16 rounded-xl"
@@ -234,12 +240,22 @@ const AVLTree = () => {
           </div>
         </div>
 
-       
         <div
           className="flex flex-col gap-2 justify-center items-center"
           onClick={clearTree}
         >
           <Button name="Clear" />
+        </div>
+        <div className="flex flex-col !text-red-700 gap-2 justify-center items-center">
+          <input
+            className="w-16 rounded-xl"
+            type="text"
+            onChange={handleDelete}
+            value={del}
+          />
+          <div onClick={deleteKey}>
+            <Button name="Delete" />
+          </div>
         </div>
       </div>
     </div>
